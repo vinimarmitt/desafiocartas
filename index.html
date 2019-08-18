@@ -1,0 +1,37 @@
+<html ng-app="desafio">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <title>Jogo de Cartas</title>
+
+    <script src="js/angular.js" type="text/javascript"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controllers/desafio.js"></script>
+    <script src="js/services/desafioAPI.js"></script>
+</head>
+
+<body ng-controller="DesafioTeste">
+    <div class="container">
+        <br />
+        <div> {{ questao }}</div>
+        <br />
+        <a class="btn btn-primary btn-lg" href="#" role="button" ng-click="selecionarAlt(alternativa.id)"
+           ng-repeat="alternativa in alternativas"> {{ alternativa.text }} </a>
+        <a class="btn btn-primary btn-lg" href="#" role="button" ng-show="altSelecionada"
+           ng-click="enviarResposta()">Confirma</a>
+        <br />
+        <img style="width: 90%" ng-src="{{imagem}}" />
+        <audio ng-show="false" id="audio" ng-src="{{audio}}" controls autoplay="true"></audio>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
